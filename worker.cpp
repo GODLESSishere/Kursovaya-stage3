@@ -103,9 +103,9 @@ void Worker::auth_with_salt_at_server_side(CPP::HashTransformation& hash)
     std::clog << "log: username ok\n";
 
     std::string salt_16, message;
-    CPP::byte salt[8]; // Объявляем массив из 8 байтов
+    CPP::byte salt[8]; 
     CPP::AutoSeededRandomPool prng;
-    prng.GenerateBlock(salt, sizeof(salt)); // Используем sizeof для передачи размера массива
+    prng.GenerateBlock(salt, sizeof(salt)); 
 
     CPP::ArraySource(salt, sizeof(salt), true,
                      new CPP::HexEncoder(
